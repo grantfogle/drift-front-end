@@ -83,16 +83,19 @@ const styles = StyleSheet.create({
     },
     riversFilter: {
         width: '100%',
+        height: 30,
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 5,
+        backgroundColor: '#34495e',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderBottomColor: '#000',
-        borderBottomWidth: 2,
         marginBottom: 10,
     },
     riversFilterText: {
         height: 30,
         fontSize: 20,
-
+        color: '#fff',
     },
     textStyle: {
         fontSize: 25,
