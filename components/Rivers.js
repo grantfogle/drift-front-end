@@ -8,43 +8,43 @@ class Rivers extends Component {
         this.state = {
             rivers: [
                 {
-                    name: "South Platte River", river:'South Platte', 
+                    id: 1, name: "South Platte River", river:'South Platte', 
                     geo: 'Deckers', state: 'CO', region: 'Front Range', flow: 141, gis: '1243143'
                 },
                 {
-                    name: "South Platte River", river:'South Platte', 
+                    id: 2, name: "South Platte River", river:'South Platte', 
                     geo: 'Eleven Mile Canyon', state: 'CO', region: 'Front Range', flow: 241, gis: '1243143'
                 },
                 {
-                    name: "Eagle River", river:'Eagle', geo: 'Dotsero',
+                    id: 3, name: "Eagle River", river:'Eagle', geo: 'Dotsero',
                     state: 'CO', region: 'Central Colorado', flow: 369, gis: '1243143'
                 },
                 {
-                    name: "Eagle River", river:'Eagle', geo: 'Eagle',
+                    id: 4, name: "Eagle River", river:'Eagle', geo: 'Eagle',
                     state: 'CO', region: 'Central Colorado', flow: 369, gis: '1243143'
                 },
                 {
-                    name: "Roaring Fork River", river: 'Roaring Fork', geo: 'Aspen',
+                    id: 5, name: "Roaring Fork River", river: 'Roaring Fork', geo: 'Aspen',
                     state: 'CO', region: 'Central Colorado', flow: 449, gis: '1243143'
                 },
                 {
-                    name: "Roaring Fork River", river: 'Roaring Fork', geo: 'Glenwood Springs',
+                    id: 6, name: "Roaring Fork River", river: 'Roaring Fork', geo: 'Glenwood Springs',
                     state: 'CO', region: 'Central Colorado', flow: 800, gis: '1243143'
                 },
                 {
-                    name: "Arkansas River", river: 'Arkansas', geo: 'Salida',
+                    id: 7, name: "Arkansas River", river: 'Arkansas', geo: 'Salida',
                     state: 'CO', region: 'Central Colorado', flow: 1200, gis: '1243143'
                 },
                 {
-                    name: "Arkansas River", river: 'Arkansas', geo: 'Buena Vista',
+                    id: 8, name: "Arkansas River", river: 'Arkansas', geo: 'Buena Vista',
                     state: 'CO', region: 'Central Colorado', flow: 600, gis: '1243143'
                 },
                 {
-                    name: "Animas River", river: 'Animas', geo: 'Durango',
+                    id: 9, name: "Animas River", river: 'Animas', geo: 'Durango',
                     state: 'CO', region: 'Central Colorado', flow: 1200, gis: '1243143'
                 },
                 {
-                    name: "Rio Conejos", river: 'Rio Conejos', geo: 'Pagosa Springs',
+                    id: 10, name: "Rio Conejos", river: 'Rio Conejos', geo: 'Pagosa Springs',
                     state: 'CO', region: 'Central Colorado', flow: 200, gis: '1243143'
                 },
             ]
@@ -56,7 +56,7 @@ class Rivers extends Component {
     // get context for user
 
     displayRivers() {
-        return this.state.rivers.map(river => <River id={river.gis} data={river} />);
+        return this.state.rivers.map(river => <River key={river.id} data={river} />);
     }
 
     render() {
