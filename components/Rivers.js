@@ -68,7 +68,6 @@ class Rivers extends Component {
                     <Text style={riversFilterText}>Current Flows</Text>
                 </View>
                 {this.displayRivers()}
-                <Text style={textStyle}>asdfasdf</Text>
             </ScrollView>
         );
     }

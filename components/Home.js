@@ -19,7 +19,6 @@ class Home extends Component {
                 <Filter />
                 {/* <Search /> */}
                 <Rivers />
-                <Text style={textStyle}>asdfasdf</Text>
             </View>
         );
     }

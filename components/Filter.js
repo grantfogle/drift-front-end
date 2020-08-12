@@ -16,12 +16,12 @@ class Filter extends Component {
                     {/* add search icon */}
                     <TextInput style={filterSearchTextInput} placeholder='Search River, State, or Region'/>
                 </View>
-                <View>
+                {/* <View> */}
                     {/* dropdown for state */}
                     {/* filter by state */}
                     {/* filter by region */}
                     {/* dropdown for region */}
-                </View>
+                {/* </View> */}
             </View>
         );
     }
