@@ -32,8 +32,8 @@ export default RiverView;
 
 const styles = StyleSheet.create({
     chartView: {
-        height: 400,
+        height: 200,
         width: '100%',
-        backgroundColor: '#000'
+        // backgroundColor: '#000'
     },
 });

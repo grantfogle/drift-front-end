@@ -1,24 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import RiverView from './RiverView';
 
-const River = ({data}) => {
-    // const {river, flow}
-    const {name, flow, geo} = data;
-    const { riverContainer, riverData, riverName, riverGeo, riverFlow, riverViewButton } = styles;
-    let displayChart = true;
-    return (
+class River extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            displayChart: false,
+        }
+    }
+
+    displayRiverChart() {
+        if (this.state.displayChart) {
+            return <RiverView data={this.state.displayChart}/>
+        }
+    }
+    render() {
+        const {name, flow, geo} = this.props.data;
+        const { riverContainer, riverData, riverDataHeader, riverName, riverGeo, riverFlow, riverViewButton } = styles;
+        return (
         <View style={riverContainer}>
-            <TouchableOpacity style={riverData}>
+            <TouchableOpacity style={riverData} onPress={() => {
+                console.log('it worked', this.state.displayChart);
+                this.setState({displayChart: !this.state.displayChart})
+                }}>
+                <View style={riverDataHeader}>
                     <View>
                         <Text style={riverName}>{name}</Text>
                         <Text style={riverGeo}>{geo}</Text>
                     </View>
-                <Text style={riverFlow}>{flow} cfs</Text>
-                <RiverView/>
+                    <Text style={riverFlow}>{flow} cfs</Text>
+                </View>
+                {this.displayRiverChart()}
             </TouchableOpacity>
         </View>
     );
+        }
 }
 
 export default River;
@@ -31,13 +48,20 @@ const styles = {
     },
     riverData: {
         width: '100%',
-        height: '100%',
-        flexDirection: 'row',
+        paddingTop: 10,
+        paddingBottom: 10,
+        // height: '100%',
+        flexDirection: 'column',
         backgroundColor: '#3498db',
         borderRadius: 10,
         alignItems: 'center',
         paddingLeft: 10,
         paddingRight: 10,
+    },
+    riverDataHeader: {
+        flexDirection: 'row',
+        // height: ,
+        width: '100%',
         justifyContent: 'space-between',
     },
     riverGeo: {
