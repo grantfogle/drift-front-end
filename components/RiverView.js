@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import RiverFlowChart from './RiverFlowChart';
+import RiverForecast from './RiverForecast';
 
 class RiverView extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class RiverView extends Component {
         return (
             <View style={chartView}>
                 <RiverFlowChart />
-                <Text>asdf</Text>
+                <RiverForecast />
             </View>
         );
     }
