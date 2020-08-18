@@ -9,6 +9,7 @@ class RiverView extends Component {
         this.state = {
             riverName: 'South Platte River',
             weeklyFlows: [220, 230, 240, 229, 220, 205, 200],
+            weeklyLabel: ['July 11', 'July 12', 'July 13', 'July 14', 'July 15', 'July 16', 'July 17'],
             monthlyFlow: [],
             yearlyFlow: [],
             medianWeeklyFlow: [200, 200, 205, 205, 200, 200, 195],
@@ -20,12 +21,16 @@ class RiverView extends Component {
         }
     }
 
+    displayWeatherForecast() {
+
+    }
+
     render() {
         const { chartView } = styles;
         return (
             <View style={chartView}>
-                <RiverFlowChart />
-                <RiverForecast />
+                <RiverFlowChart data={this.state} />
+                <RiverForecast data={this.state.displayWeatherForecast} />
             </View>
         );
     }

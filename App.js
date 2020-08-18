@@ -2,13 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './components/Home';
+import DriftContextProvider from './contexts/DriftContext';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <DriftContextProvider style={styles.container}>
       <Home />
       <StatusBar style="auto" />
-    </View>
+    </DriftContextProvider>
   );
 }
 
