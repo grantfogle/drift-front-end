@@ -18,10 +18,10 @@ class River extends Component {
         }
     }
 
-    async getWeatherData() {
-        const weatherData = await this.context.getWeatherData('Eagle', 'CO', 'US');
-        console.log('it ran', weatherData);
-    }
+    // async getWeatherData() {
+    //     const weatherData = await this.context.getWeatherData('eagle', 'co', 'us');
+    //     console.log('it ran', weatherData);
+    // }
 
     render() {
         const {name, flow, geo} = this.props.data;
@@ -30,7 +30,7 @@ class River extends Component {
         <View style={riverContainer}>
             <TouchableOpacity style={riverData} onPress={() => {
                 console.log('it worked', this.state.displayChart);
-                this.getWeatherData();
+                // this.getWeatherData();
                 this.setState({displayChart: !this.state.displayChart})
                 }}>
                 <View style={riverDataHeader}>

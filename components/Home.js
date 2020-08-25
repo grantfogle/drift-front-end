@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Button } from 'react-native';
 import Rivers from './Rivers';
 import Filter from './Filter';
+import { Actions } from 'react-native-router-flux';
 
 class Home extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Home extends Component {
                 {/* <Filter /> will allow users to filter by region, state*/}
                 <Filter />
                 {/* <Search /> */}
+                <Button title="View Maps" onPress={() => Actions.riverMap()}></Button>
                 <Rivers />
             </View>
         );

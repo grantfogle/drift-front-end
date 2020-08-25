@@ -6,31 +6,32 @@ export const DriftContext = createContext();
 class DriftContextProvider extends Component {
     state = {};
 
-    async getWeatherData(cityName, stateCode, countryCode) {
-        console.log('it ran in context api');
-        const query = `api.openweathermap.org/data/2.5/forecast?q=${cityName},${stateCode},${countryCode}&appid=${apiKeyWeather}&mode=json`;
-        const query2 = `api.openweathermap.org/data/2.5/forecast?q=eagle,co,us&appid=b25ed8127b6a1baad76c30312b88d6a3`;
+    // async getWeatherData(cityName, stateCode, countryCode) {
+    //     console.log('it ran in context api');
+    //     console.log(cityName, stateCode, countryCode);
+    //     let cors = 'https://cors-anywhere.herokuapp.com/';
+    //     let query = `api.openweathermap.org/data/2.5/forecast?q=${cityName},${stateCode},${countryCode}&appid=${apiKeyWeather}&mode=xml`;
+    //     console.log(`${cors}${query}`);
+    //     await fetch(`${cors}${query}`, {
+    //         method: 'GET',
+    //         // headers: {
+    //         //     'Content-Type': 'application/json',
+    //           // 'Accept': 'application/json',
+    //         // },
+    //     })
+    //         .then(response => response)
+    //         .then(data => {
+    //             console.log('dataaaa', data);
+    //             return data;
+    //         })
 
-        await fetch(query2, {
-            method: 'GET',
-            // headers: {
-            //     'Content-Type': 'application/x-www-form-urlencoded',
-            // }
-        })
-        .then(response => {
-            console.log('asdfadsf', response);
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
+    // }
 
-    }
     render() {
         return (
             <DriftContext.Provider value={{
                 ...this.state,
-                getWeatherData: this.getWeatherData.bind(this)
+                // getWeatherData: this.getWeatherData.bind(this)
             }}>
                 {this.props.children}
             </DriftContext.Provider>
