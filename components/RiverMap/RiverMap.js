@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
+import { Polygon } from 'react-native-maps';
+
 // import RiverView from './RiverView';
 import {DriftContext} from '../../contexts/DriftContext';
 
@@ -9,9 +11,15 @@ class RiverMap extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            fishableWater: {},
+            parkingSpaces: {},
+            polygon: [{latitude: 39.257968, longitude: -105.229786},{latitude: 39.252219, longitude: -105.219401}, {latitude: 39.272840, longitude: -105.211611}, {latitude: 39.274784, longitude:-105.220688}]
         }
     }
 
+    // displayFishableWater() {}
+    // displayParking(){}
+    // displayRestrooms(){}
     // async getWeatherData() {
     //     const weatherData = await this.context.getWeatherData('eagle', 'co', 'us');
     //     console.log('it ran', weatherData);
@@ -31,7 +39,15 @@ class RiverMap extends Component {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
             }}
-        />
+        >
+        <Polygon
+            coordinates={this.state.polygon} 
+            strokeColor="rgba(39, 174, 96, 1.0)"
+            strokeWidth={2}
+            fillColor="rgba(46, 204, 113, .5)"
+            />
+        </MapView>
+        {/* <Footer/> */}
         </View>
     );
         }
